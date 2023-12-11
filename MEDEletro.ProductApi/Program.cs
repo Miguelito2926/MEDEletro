@@ -13,6 +13,8 @@ var SqlServeConnection = builder.Configuration.GetConnectionString("DefaultConne
 builder.Services.AddDbContext<AppDbContext>(opt => 
 opt.UseSqlServer(SqlServeConnection));
 
+//Registrando serviço do automapper
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
