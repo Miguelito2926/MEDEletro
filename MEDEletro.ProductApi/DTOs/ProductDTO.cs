@@ -1,5 +1,6 @@
 ﻿using MEDEletro.ProductApi.Models;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace MEDEletro.ProductApi.DTOs
 {
@@ -27,6 +28,7 @@ namespace MEDEletro.ProductApi.DTOs
 
         public string? ImageUrl { get; set; }
 
+        [JsonIgnore]
         public Category? Category { get; set; }
 
         public int CategoryId { get; set; }
