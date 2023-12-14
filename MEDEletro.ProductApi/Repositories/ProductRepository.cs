@@ -13,12 +13,13 @@ namespace MEDEletro.ProductApi.Repositories
         }
         public async Task<IEnumerable<Product>> GetAll()
         {
-           return await _context.Products.ToListAsync();
+           return await _context.Products.Include(c => c.Category).ToListAsync();
         
         }       
         public async Task<Product> GetById(int id)
         {
-            return await _context.Products.Where(c => c.Id == id).FirstOrDefaultAsync();
+            return await _context.Products.Include(c => c.Category)
+                .Where(c => c.Id == id).FirstOrDefaultAsync();
             
         }
 

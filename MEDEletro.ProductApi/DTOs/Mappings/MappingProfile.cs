@@ -8,7 +8,8 @@ namespace MEDEletro.ProductApi.DTOs.Mappings
         public MappingProfile() 
         {
             CreateMap<Category, CategoryDTO>().ReverseMap();
-            CreateMap<Product, ProductDTO>().ReverseMap();  
+            CreateMap<Product, ProductDTO>();
+            CreateMap<Product, ProductDTO>().ForMember(x => x.Category.Name, opt => opt.MapFrom(src => src.Category.Name));         
         }
     }
 }
