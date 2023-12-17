@@ -6,7 +6,7 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace MEDEletro.ProductApi.Controllers;
 
-[Route("api/v1/[controller]")]
+[Route("api/[controller]")]
 [ApiController]
 public class CategoriesController : ControllerBase
 {

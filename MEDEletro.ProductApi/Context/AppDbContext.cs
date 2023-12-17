@@ -26,7 +26,7 @@ namespace MEDEletro.ProductApi.Context
 
             //Relacionamento um para muitos
             modelBuilder.Entity<Category>().HasMany(g => g.Products).WithOne(c =>
-                        c.Category).IsRequired().OnDelete(DeleteBehavior.Cascade);
+                        c.CategoryName).IsRequired().OnDelete(DeleteBehavior.Cascade);
 
             //Usando HasData para incluir dados no banco senão houver
             modelBuilder.Entity<Category>().HasData(

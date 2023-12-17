@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MEDEletro.ProductApi.Controllers
 {
-    [Route("api/v1/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
     {

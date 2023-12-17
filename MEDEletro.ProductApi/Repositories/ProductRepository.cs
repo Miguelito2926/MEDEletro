@@ -13,12 +13,12 @@ namespace MEDEletro.ProductApi.Repositories
         }
         public async Task<IEnumerable<Product>> GetAll()
         {
-           return await _context.Products.Include(c => c.Category).ToListAsync();
+           return await _context.Products.Include(c => c.CategoryName).ToListAsync();
         
         }       
         public async Task<Product> GetById(int id)
         {
-            return await _context.Products.Include(c => c.Category)
+            return await _context.Products.Include(c => c.CategoryName)
                 .Where(c => c.Id == id).FirstOrDefaultAsync();
             
         }
@@ -29,8 +29,6 @@ namespace MEDEletro.ProductApi.Repositories
             await _context.SaveChangesAsync();
             return product;
         }
-
-
         public async Task<Product> Update(Product product)
         {
             _context.Entry(product).State = EntityState.Modified;
